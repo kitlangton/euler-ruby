@@ -5,6 +5,10 @@ class NumberSpiralsTest < MiniTest::Test
   def setup
     @ns = NumberSpiral.new
   end
+
+  def test_number_spiral_of_12
+  end
+
   def test_number_spiral_of_1
     assert_equal '1', @ns.length(1)
   end

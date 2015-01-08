@@ -1,0 +1,29 @@
+class PalindromeProduct
+  class << self
+    def from(number_of_digits)
+      number = 123
+      numbers = build_numbers(number_of_digits)
+      until PalindromeNumber.check(number)
+        number = numbers[-1] * numbers[-1]
+        break
+        break if PalindromeNumber.check(number)
+        number = numbers.shift * numbers[-1]
+      end
+      number
+    end
+
+    private
+
+    def build_numbers(number_of_digits)
+      multiplier = "9" * number_of_digits
+      (1..multiplier.to_i).to_a
+    end
+  end
+
+end
+
+class PalindromeNumber
+  def self.check(number)
+    number.to_s.reverse == number.to_s
+  end
+end
