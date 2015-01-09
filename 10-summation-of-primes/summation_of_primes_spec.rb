@@ -9,9 +9,13 @@
 require_relative 'summation_of_primes'
 
 describe SummationOfPrimes do
-  it 'verifies the example' do
-    skip 'write a test using the example given above'
+  it 'calculates the sum of all primes below ten' do
+    answer = SummationOfPrimes.new.below(10)
+    expect(answer).to eq 17
   end
 
-  it 'leads you toward the solution'
+  it 'calculates the sum of all primes below two million' do
+    answer = SummationOfPrimes.new.below(2_000_000)
+    expect(answer).to eq 17
+  end
 end
